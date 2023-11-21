@@ -1,7 +1,7 @@
 ﻿using ChallangeApp;
 
-Employee user1 = new Employee("Andrzej","Kaczmarek", 40);
-Employee user2 = new Employee("Paweł","Jagielski", 25);
+Employee user1 = new Employee("Andrzej", "Kaczmarek", 40);
+Employee user2 = new Employee("Paweł", "Jagielski", 25);
 Employee user3 = new Employee("Agnieszka", "Kowalska", 31);
 Employee user4 = new Employee("Damian", "Nowak", 28);
 
@@ -21,7 +21,7 @@ user4.AddScore(30);
 List<Employee> employees = new List<Employee>()
 
 {
-    user1, user2, user3, user4 
+    user1, user2, user3, user4
 };
 
 int maxResult = -1;
@@ -29,14 +29,14 @@ Employee employeeWithMaxResult = null;
 
 foreach (var employee in employees)
 {
-    if(employee.Result > maxResult)
+    if (employee.Result > maxResult)
     {
         employeeWithMaxResult = employee;
-        maxResult= employee.Result;
+        maxResult = employee.Result;
     }
 }
 
-Console.WriteLine(employeeWithMaxResult.name + "" + employeeWithMaxResult.surname + "" + employeeWithMaxResult.age + ",wynik:" + employeeWithMaxResult.Result);
+Console.WriteLine(employeeWithMaxResult.Name + "" + employeeWithMaxResult.Surname + "" + employeeWithMaxResult.Age + ",wynik:" + employeeWithMaxResult.Result);
 
 
 
