@@ -1,9 +1,9 @@
 ﻿using ChallangeApp;
 
-Employee user1 = new Employee("Andrzej", "Kaczmarek", 40);
-Employee user2 = new Employee("Paweł", "Jagielski", 25);
-Employee user3 = new Employee("Agnieszka", "Kowalska", 31);
-Employee user4 = new Employee("Damian", "Nowak", 28);
+var user1 = new Employee("Andrzej", "Kaczmarek", 40);
+var user2 = new Employee("Paweł", "Jagielski", 25);
+var user3 = new Employee("Agnieszka", "Kowalska", 31);
+var user4 = new Employee("Damian", "Nowak", 28);
 
 user1.AddScore(10);
 user1.AddScore(30);
