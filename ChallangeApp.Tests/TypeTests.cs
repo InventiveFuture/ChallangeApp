@@ -10,13 +10,13 @@ namespace ChallangeApp.Tests
         public void WhenWeCompareUsers_ShouldGiveNotEqualResult()
         {
             //arrange
-            var user1 = GetUser("Adam");
-            var user2 = GetUser("Tomasz");
+            var user1 = GetEmployee("Adam");
+            var user2 = GetEmployee("Tomasz");
 
             //assert
             Assert.AreNotEqual(user1, user2);
 
-            Employee GetUser(string name)
+            Employee GetEmployee(string name)
             {
 
                 return new Employee(name);
@@ -27,14 +27,14 @@ namespace ChallangeApp.Tests
         public void WhenWeCompareTwoUsersWithTheSameLogin_ShouldGiveEqualResult()
         {
             //arrange
-            var user1 = GetUser("Adam");
-            var user2 = GetUser("Adam");
+            var user1 = GetEmployee("Adam");
+            var user2 = GetEmployee("Adam");
 
             //assert
             Assert.AreEqual(user1.Name, user2.Name);
 
 
-            Employee GetUser(string name)
+            Employee GetEmployee(string name)
             {
 
                 return new Employee(name);
