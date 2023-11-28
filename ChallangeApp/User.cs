@@ -15,6 +15,9 @@ namespace ChallangeApp
             this.Name = name;
             this.Surname = surname;
         }
+        public Employee(string name) 
+        { this.Name = name; 
+        }
         public string Name { get; private set; }
         public string Surname { get; private set; }
         public string Age { get; private set; }

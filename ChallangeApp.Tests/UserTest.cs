@@ -3,7 +3,7 @@ using System.Reflection.Metadata;
 
 namespace ChallangeApp.Tests
 {
-    public class Tests
+    public class UserTests
     {
 
 
@@ -16,8 +16,6 @@ namespace ChallangeApp.Tests
             user.AddScore(11);
             user.DeleteScore(-20);
             user.Multiplication(3 * 2);
-
-
 
             //act
             var result = user.Result;
