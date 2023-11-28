@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 
 namespace ChallangeApp
 {
-    public class Employee
+    public class User
     {
         public List<int> score = new List<int>();
-        public Employee(string name, string surname, int age)
+        public User(string name, string surname, int age)
         {
             this.Name = name;
             this.Surname = surname;
         }
-        public Employee(string name) 
+        public User(string name) 
         { this.Name = name; 
         }
         public string Name { get; private set; }

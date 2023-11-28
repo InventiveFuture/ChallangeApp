@@ -11,7 +11,7 @@ namespace ChallangeApp.Tests
         public void WhenUsersResultsAreGathered_ShouldReturnCorrectSum()
         {
             //arrange
-            var user = new Employee("Andrzej", "Kaczmarek", 40);
+            var user = new User("Andrzej", "Kaczmarek", 40);
             user.AddScore(9);
             user.AddScore(11);
             user.DeleteScore(-20);

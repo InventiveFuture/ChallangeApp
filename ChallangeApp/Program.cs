@@ -1,9 +1,9 @@
 ﻿using ChallangeApp;
 
-var user1 = new Employee("Andrzej", "Kaczmarek", 40);
-var user2 = new Employee("Paweł", "Jagielski", 25);
-var user3 = new Employee("Agnieszka", "Kowalska", 31);
-var user4 = new Employee("Damian", "Nowak", 28);
+var user1 = new User("Andrzej", "Kaczmarek", 40);
+var user2 = new User("Paweł", "Jagielski", 25);
+var user3 = new User("Agnieszka", "Kowalska", 31);
+var user4 = new User("Damian", "Nowak", 28);
 
 user1.AddScore(10);
 user1.AddScore(30);
@@ -18,25 +18,25 @@ user3.AddScore(15);
 
 user4.AddScore(30);
 
-List<Employee> employees = new List<Employee>()
+List<User> employees = new List<User>()
 
 {
     user1, user2, user3, user4
 };
 
 int maxResult = -1;
-Employee employeeWithMaxResult = null;
+User userWithMaxResult = null;
 
-foreach (var employee in employees)
+foreach (var user in employees)
 {
-    if (employee.Result > maxResult)
+    if (user.Result > maxResult)
     {
-        employeeWithMaxResult = employee;
-        maxResult = employee.Result;
+        userWithMaxResult = user;
+        maxResult = user.Result;
     }
 }
 
-Console.WriteLine(employeeWithMaxResult.Name + "" + employeeWithMaxResult.Surname + "" + employeeWithMaxResult.Age + ",wynik:" + employeeWithMaxResult.Result);
+Console.WriteLine(userWithMaxResult.Name + "" + userWithMaxResult.Surname + "" + userWithMaxResult.Age + ",wynik:" + userWithMaxResult.Result);
 
 
 

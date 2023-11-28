@@ -5,40 +5,26 @@ namespace ChallangeApp.Tests
     public class TypeTests
     {
 
-
         [Test]
         public void WhenWeCompareUsers_ShouldGiveNotEqualResult()
         {
             //arrange
-            var user1 = GetEmployee("Adam");
-            var user2 = GetEmployee("Tomasz");
+            var user1 = GetUser("Adam");
+            var user2 = GetUser("Tomasz");
 
             //assert
             Assert.AreNotEqual(user1, user2);
-
-            Employee GetEmployee(string name)
-            {
-
-                return new Employee(name);
-
-            }
         }
         [Test]
         public void WhenWeCompareTwoUsersWithTheSameLogin_ShouldGiveEqualResult()
         {
             //arrange
-            var user1 = GetEmployee("Adam");
-            var user2 = GetEmployee("Adam");
+            var user1 = GetUser("Adam");
+            var user2 = GetUser("Adam");
 
             //assert
             Assert.AreEqual(user1.Name, user2.Name);
 
-
-            Employee GetEmployee(string name)
-            {
-
-                return new Employee(name);
-            }
         }
                 [Test]
                 public void WhenThereAreTwoDifferentNumbers_ShouldGiveNotEqualResult()
@@ -61,7 +47,11 @@ namespace ChallangeApp.Tests
                     //assert
 
                     Assert.AreEqual(number1, number2);
-                } 
-        
+                }
+        private User GetUser(string name)
+        {
+            return new User(name);
+
+        }
     }
 }
