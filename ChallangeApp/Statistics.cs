@@ -8,5 +8,7 @@
 
         public float Average { get; set; }
 
+        public float Counter { get; set; }
+
     }
 }

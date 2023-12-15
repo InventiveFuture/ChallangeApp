@@ -1,4 +1,7 @@
-﻿namespace ChallangeApp
+﻿using System;
+using System.Security.Cryptography.X509Certificates;
+
+namespace ChallangeApp
 {
     public class Employee
     {
@@ -26,35 +29,93 @@
 
         public void AddGrade(string grade)
         {
-            if(float.TryParse(grade, out float result))
+            if (float.TryParse(grade, out float result))
             {
                 this.AddGrade(result);
             }
-            else 
+            else
             {
                 Console.WriteLine("String is not float");
             }
 
         }
-        public void AddGrade(long grade) 
+        public void AddGrade(long grade)
         {
             float gradeAsFloat = (float)grade;
-            this.AddGrade(gradeAsFloat);        
+            this.AddGrade(gradeAsFloat);
         }
 
-        public void AddGrade (int grade) 
+        public void AddGrade(int grade)
         {
             float gradeAsFloat = grade;
             this.AddGrade(gradeAsFloat);
         }
-        
-        public void AddGrade (double grade) 
+
+        public void AddGrade(double grade)
         {
             float gradeAsFloat = (float)grade;
             this.AddGrade(gradeAsFloat);
-        
+
         }
-        public Statistics GetStatistics()
+        public Statistics GetStatisticsWithWhile()
+        {
+            var statistics = new Statistics();
+            statistics.Average = 0;
+            statistics.MaxValue = float.MinValue;
+            statistics.MinValue = float.MaxValue;
+
+            var index = 0;
+
+            while (index < this.grades.Count)
+            {
+                statistics.MaxValue = Math.Max(statistics.MaxValue, this.grades[index]);
+                statistics.MinValue = Math.Min(statistics.MinValue, this.grades[index]);
+                statistics.Average += this.grades[index];
+                index++;
+            }
+
+            statistics.Average = statistics.Average / this.grades.Count;
+            return statistics;
+        }
+        public Statistics GetStatisticsWithDoWhile()
+        {
+            var statistics = new Statistics();
+            statistics.Average = 0;
+            statistics.MaxValue = float.MinValue;
+            statistics.MinValue = float.MaxValue;
+
+            var index = 0;
+
+            do
+            {
+                statistics.MaxValue = Math.Max(statistics.MinValue, this.grades[index]);
+                statistics.MinValue = Math.Min(statistics.MinValue, this.grades[index]);
+                statistics.Average += this.grades[index];
+                index++;
+            } while (index < this.grades.Count);
+
+            statistics.Average = statistics.Average / this.grades.Count;
+            return statistics;
+        }
+
+        public Statistics GetStatisticsWithFor()
+        {
+            var statistics = new Statistics();
+            statistics.Average = 0;
+            statistics.MaxValue = float.MinValue;
+            statistics.MinValue = float.MaxValue;
+            statistics.Counter = this.grades.Count;
+            for (int i = 0; i < this.grades.Count; i++)
+            {
+                statistics.MaxValue = Math.Max(statistics.MaxValue, this.grades[i]);
+                statistics.MinValue = Math.Min(statistics.MinValue, this.grades[i]);
+                statistics.Average += this.grades[i];
+            }
+
+            statistics.Average = statistics.Average / this.grades.Count;
+            return statistics;
+        }
+        public Statistics GetStatisticsWithForEach()
         {
             var statistics = new Statistics();
             statistics.Average = 0;
@@ -67,9 +128,7 @@
                 statistics.MinValue = Math.Min(statistics.MinValue, grade);
                 statistics.Average += grade;
             }
-
-            statistics.Average = statistics.Average / this.grades.Count;
-
+            statistics.Average /= this.grades.Count;
             return statistics;
         }
     }
